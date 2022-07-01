@@ -23,6 +23,7 @@ export default class TimeRange extends Component {
 
         const ButtonGroup = styled.div`
             text-align: center;
+            margin-top: 70px;
         `;
 
         const TimeRangeBtn = styled.button`

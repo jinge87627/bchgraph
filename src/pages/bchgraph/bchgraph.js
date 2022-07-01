@@ -7,6 +7,7 @@ import Footer from '../../components/footer/footer';
 import Logout from "../../components/logout/logout";
 import TimeRange from "../../components/timerange/timerange";
 import Graph from "../../components/graph/graph";
+import Posts from "../../components/posts/posts";
 
 export default class Bchgraph extends Component {
 
@@ -24,6 +25,7 @@ export default class Bchgraph extends Component {
     }
 
     componentDidMount() {
+        // Get Historical Price in a Day
         let historicalPricesDay = [], promises = [];
         let timestamp = new Date();
         timestamp.setUTCHours(0, 0, 0, 0);
@@ -49,6 +51,7 @@ export default class Bchgraph extends Component {
             });
         });
 
+        // Get Historical Price Week, Month
         axios.get(process.env.REACT_APP_HISTORICAL_PRICE_URL)
             .then((res) => {
                 this.setState({
@@ -56,6 +59,8 @@ export default class Bchgraph extends Component {
                     historicalPricesWeek: this.makeGraphData(res.data.slice(0, 7).reverse(), "month")
                 });
             });
+
+        // Get Current Spot Price
         axios.get(process.env.REACT_APP_CURRENT_SPOT_PRICE_URL)
             .then((res) => {
                 this.setState({
@@ -71,12 +76,25 @@ export default class Bchgraph extends Component {
                     }, 60000);
                 });
             });
-        fetch(process.env.REACT_APP_LATEST_POSTS_URL)
+
+        // Get Latest Posts
+        axios({
+            method: 'get',
+            url: process.env.REACT_APP_LATEST_POSTS_URL,
+            headers: {
+                "access-control-allow-origin": "*",
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
             .then((res) => {
-                res.json();
+                this.setState({
+                    latestPosts: res.data.sort(this.comparePostTime).slice(0, 4)
+                }, () => {
+                    console.log(this.state.latestPosts)
+                });
             })
-            .then((data) => {
-                console.log(data)
+            .catch((error) => {
+                console.log(error);
             });
     }
 
@@ -129,10 +147,11 @@ export default class Bchgraph extends Component {
     }
 
     compareTimestamp(a, b) {
-        if (a[0] > b[0]) {
-            return 1;
-        }
-        return 0;
+        return new Date(a[0]) - new Date(b[0]);
+    }
+
+    comparePostTime(a, b) {
+        return new Date(b.publish_date) - new Date(a.publish_date);
     }
 
     convertPriceWithComma(price) {
@@ -140,9 +159,7 @@ export default class Bchgraph extends Component {
     }
 
     render() {
-
         return (
-
             <div ref={el => (this.div = el)}>
                 <Title
                     title="BCH Graph"
@@ -155,6 +172,13 @@ export default class Bchgraph extends Component {
                 />
                 <Graph
                     graphData={this.state.graphData}
+                />
+                <Title
+                    title=""
+                    subtitle="Latest Posts"
+                />
+                <Posts
+                    latestPosts={this.state.latestPosts}
                 />
                 <Footer />
             </div>

@@ -77,11 +77,12 @@ export default class Graph extends Component {
             text-align: center;
             margin: auto;
             margin-top: 20px;
+            margin-bottom: 70px;
         `;
 
         return (
             <GraphContainer>
-                <ResponsiveContainer width="100%" minWidth={500} height={500}>
+                <ResponsiveContainer width="100%" minWidth={500} height={300}>
                     <ComposedChart
                         data={this.state.graphData}
                     >

@@ -1,10 +1,8 @@
 html {
-  height: 100%;
   font-family: "Roboto", sans-serif;
 }
 
 body {
-  height: 100%;
   background: #171A20 !important;
 }
 
@@ -23,19 +21,6 @@ body {
 .logo-div {
   height: 70px;
   margin-bottom: 30px;
-  cursor: pointer;
-}
-
-.logo-img {
-  width: 110px;
-  margin: 17px 0px 0px 11px;
-}
-
-.profile-img {
-  width: 28px;
-  height: 40px;
-  margin: 12px 34px 0px 0px;
-  float: right;
   cursor: pointer;
 }
 
@@ -260,14 +245,14 @@ body {
   cursor: pointer;
 }
 
-.container {
+/* .container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: Calc(100% - 140px);
   padding: 70px;
-}
+} */
 
 .titles {
   color: #268de1;
@@ -300,15 +285,6 @@ body {
   .contents {
     font-size: 18px;
   }
-}
-
-#ixstudio-title {
-  margin-top: 50px;
-}
-
-#ixstudio-div {
-  padding-left: 150px;
-  padding-right: 150px;
 }
 
 .log-out-icon {
