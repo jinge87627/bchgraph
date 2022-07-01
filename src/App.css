@@ -1,0 +1,321 @@
+html {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100%;
+  background: #171A20 !important;
+}
+
+/* Login Page */
+
+.login-page {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-logo {
+  height: 70px;
+  background: #2C3038;
+}
+
+.logo-div {
+  height: 70px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 110px;
+  margin: 17px 0px 0px 11px;
+}
+
+.profile-img {
+  width: 28px;
+  height: 40px;
+  margin: 12px 34px 0px 0px;
+  float: right;
+  cursor: pointer;
+}
+
+.login-content-div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+
+.login-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.login-subtitle {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.login-subtitle-p {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.login-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #ffffff;
+  width: 300px;
+  text-align: left;
+  margin: 0px 0px 5px 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrong-pass {
+  color: #ff0000 !important;
+}
+
+.login-input {
+  width: 300px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0px 0px 5px 0px;
+  padding-left: 10px;
+  border: 1px solid #00a2ed;
+  border-radius: 12px;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+.login-input:focus-visible {
+  outline: 1px solid #4285f4;
+}
+
+.login-btn {
+  width: 308px;
+  height: 56px;
+  color: #ffffff;
+  margin: 20px 0px 5px 0px;
+  padding: 0;
+  background: #00a2ed;
+  border: 1px solid #00a2ed;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-p {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 100;
+  cursor: pointer;
+  width: 308px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+}
+
+.new-login-title {
+  cursor: default;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.forget:hover {
+  color: #00a2ed;
+}
+
+.sign-up-p {
+  float: right;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.sign-up-p:hover {
+  color: #00a2ed;
+}
+
+
+.footer-div {
+  position: fixed;
+  background: #171A20;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Dashboard Page */
+
+.dashboard-page {
+  width: 100%;
+  height: 100%;
+  background: #171A20;
+}
+
+.dashboard-content-div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  display: flex;
+}
+
+.dashboard-item-div {
+  padding: 10px;
+}
+
+.toggle-dropdown-menu {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.toggle-dropdown-item {
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 0;
+  padding: 0.687rem 1.562rem;
+  cursor: pointer;
+  font-size: .875rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.margin-bottom-60px {
+  margin-bottom: 60px;
+}
+
+.vieaura-link {
+  text-decoration: none !important;
+  color: #00a2ed;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.reset-pass-title {
+  margin: auto;
+}
+
+.profile-name {
+  color: #FAFBFF;
+  position: absolute;
+  right: 48px;
+  transform: translate(50%, 0);
+}
+
+.contents-div {
+  width: 100%;
+  height: 300px;
+  background: #2C3038;
+  border-radius: 12px;
+  margin-top: 20px;
+  padding: 50px;
+  cursor: pointer;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: Calc(100% - 140px);
+  padding: 70px;
+}
+
+.titles {
+  color: #268de1;
+  font-size: 36px;
+  text-align: center;
+}
+
+.contents {
+  color: #FAFBFF;
+  text-align: center;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .contents-div {
+    height: 100%;
+  }
+  .custom-col {
+    margin-bottom: 80px;
+  }
+  #ixstudio-div {
+    padding: 50px !important;
+  }
+  #ixstudio-title {
+    margin-top: 0px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contents {
+    font-size: 18px;
+  }
+}
+
+#ixstudio-title {
+  margin-top: 50px;
+}
+
+#ixstudio-div {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.log-out-icon {
+  color: #fafbff;
+  cursor: pointer;
+}
+
+.log-out-icon:hover {
+  color: #00a2ed !important;
+}
