@@ -11,6 +11,7 @@ export default class Title extends Component {
             font-size: 3rem;
             font-family: "Roboto", sans-serif;
             font-weight: bold;
+            margin-top: 50px;
         `;
 
         const SubTitle = styled(Title)`

@@ -66,11 +66,10 @@ export default class Posts extends Component {
         return (
             <PostDiv>
                 <Container>
-
                     <Row>
                         {
                             this.state.latestPosts.map((post, index) =>
-                                <Col lg={3} md={6} sm={12}>
+                                <Col xl={3} lg={4} md={6} sm={12}>
                                     <Post key={index} onClick={() => this.clickPost(post.href)}>
                                         <PostImage src={post.thumbnail} alt="postimage" />
                                         <PostTitleDiv>

@@ -55,8 +55,8 @@ export default class Bchgraph extends Component {
         axios.get(process.env.REACT_APP_HISTORICAL_PRICE_URL)
             .then((res) => {
                 this.setState({
-                    historicalPricesMonth: this.makeGraphData(res.data.slice(0, 30).reverse(), "week"),
-                    historicalPricesWeek: this.makeGraphData(res.data.slice(0, 7).reverse(), "month")
+                    historicalPricesWeek: this.makeGraphData(res.data.slice(0, 7).reverse(), "week"),
+                    historicalPricesMonth: this.makeGraphData(res.data.slice(0, 30).reverse(), "month")
                 });
             });
 
@@ -134,7 +134,9 @@ export default class Bchgraph extends Component {
         for (let i = 0; i < data.length; i++) {
             let time = "";
             if (range === "day") {
-                time = new Date(data[i][0]).getDate() + "/" + (new Date(data[i][0]).getMonth() + 1) + " " + new Date(data[i][0]).getHours() + ":00";
+                time = new Date(data[i][0]).getHours() + ":00" + " " + new Date(data[i][0]).getDate() + "/" + (new Date(data[i][0]).getMonth() + 1);
+            } else if (range === "week"){
+                time = new Date(data[i][0]).getHours() + ":00" + " " + new Date(data[i][0]).getDate() + "/" + (new Date(data[i][0]).getMonth() + 1);
             } else {
                 time = new Date(data[i][0]).getDate() + "/" + (new Date(data[i][0]).getMonth() + 1);
             }
